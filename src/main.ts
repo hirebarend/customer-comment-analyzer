@@ -42,7 +42,11 @@ import { ArrayHelper } from './helpers';
   const totalResults: { [key: string]: number } =
     combineResults(totalResultsArray);
 
-  console.log(JSON.stringify(totalResults, undefined, 3));
+  const resultKeys: Array<string> = Object.keys(totalResults);
+
+  for (const key of resultKeys) {
+    console.log(`${key} : ${totalResults[key]}`);
+  }
 })();
 
 function processFile(
